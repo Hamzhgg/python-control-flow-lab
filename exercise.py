@@ -58,3 +58,78 @@ check_voting_eligibility()
 ('-----------------------------------------------------------')
 
 
+def calculate_dog_years():
+    try:
+        age = int(input("Input a dog's age: "))
+        if age < 0:
+            print("Age cannot be negative!")
+        elif age <= 2:
+            dog_years = age * 10
+        else:
+            dog_years = 20 + (age - 2) * 7
+        print(f"The dog's age in dog years is {dog_years}.")
+    except ValueError:
+        print("Invalid input. Please enter a valid number.")
+
+# Call the function
+calculate_dog_years()
+
+
+('-----------------------------------------------------------')
+
+
+def weather_advice():
+    cold = input("Is it cold? (yes/no): ").strip().lower()
+    raining = input("Is it raining? (yes/no): ").strip().lower()
+
+    if cold == "yes" and raining == "yes":
+        print("Wear a waterproof coat.")
+    elif cold == "yes" and raining == "no":
+        print("Wear a warm coat.")
+    elif cold == "no" and raining == "yes":
+        print("Carry an umbrella.")
+    elif cold == "no" and raining == "no":
+        print("Wear light clothing.")
+    else:
+        print("Invalid input. Please answer with 'yes' or 'no'.")
+
+# Call the function
+weather_advice()
+
+('-----------------------------------------------------------')
+
+
+def determine_season():
+    month = input("Enter the month of the year (Jan - Dec): ").strip().title()
+    try:
+        day = int(input("Enter the day of the month: "))
+        if month in ["Dec", "Jan", "Feb"]:
+            if (month == "Dec" and day >= 21) or (month == "Mar" and day <= 19):
+                season = "Winter"
+            else:
+                season = "Winter"
+        elif month in ["Mar", "Apr", "May", "Jun"]:
+            if (month == "Mar" and day >= 20) or (month == "Jun" and day <= 20):
+                season = "Spring"
+            else:
+                season = "Spring"
+        elif month in ["Jun", "Jul", "Aug", "Sep"]:
+            if (month == "Jun" and day >= 21) or (month == "Sep" and day <= 21):
+                season = "Summer"
+            else:
+                season = "Summer"
+        elif month in ["Sep", "Oct", "Nov", "Dec"]:
+            if (month == "Sep" and day >= 22) or (month == "Dec" and day <= 20):
+                season = "Fall"
+            else:
+                season = "Fall"
+        else:
+            print("Invalid month. Please enter a valid month.")
+            return
+        print(f"{month} {day} is in {season}.")
+    except ValueError:
+        print("Invalid day. Please enter a valid number.")
+
+# Call the function
+determine_season()
+
